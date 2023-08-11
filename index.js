@@ -20,7 +20,9 @@ app.listen(port, () => {            // Um socket para "escutar" as requisições
 import dotenv from "dotenv";
 dotenv.config();
 
-import { selectUsuarios } from "./bd.js";
+import {  selectUsuarios, selectUsuario} from "./bd.js";
+
+
 app.get("/usuarios", async (req, res) => {
   console.log("Rota GET/usuarios solicitada");
   try {
@@ -31,8 +33,6 @@ app.get("/usuarios", async (req, res) => {
   }
 });
 
-//index.js
-import { selectUsuarios, selectUsuario } from "./bd.js";
 
 //index.js
 app.get("/usuario/:id", async (req, res) => {
