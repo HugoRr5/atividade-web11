@@ -8,8 +8,6 @@ async function connect() {
   });
   return pool.connect();
 }
-//bd.js
-export { selectUsuarios, selectUsuario, insertUsuario };
 
 async function selectUsuarios() {
   const client = await connect();
@@ -37,3 +35,6 @@ async function insertUsuario(data) {
   const usuario = [data.nome, data.senha, data.email];
   await client.query(query, usuario);
 }
+
+//bd.js
+export { selectUsuarios, selectUsuario, insertUsuario };
