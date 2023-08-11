@@ -5,6 +5,14 @@ import express from "express";      // Requisição do pacote do express
 const app = express();              // Instancia o Express
 const port = 3000;  
 
+//index.js
+import dotenv from "dotenv";
+dotenv.config();
+
+//index.js
+import { selectUsuarios, selectUsuario, insertUsuario } from "./bd.js";
+
+
 app.use(express.json());
                 // Define a porta
 
@@ -19,14 +27,6 @@ app.listen(port, () => {            // Um socket para "escutar" as requisições
   console.log(`Serviço escutando na porta:  ${port}`);
 });
 
-//index.js
-//index.js
-import dotenv from "dotenv";
-dotenv.config();
-
-
-//index.js
-import { selectUsuarios, selectUsuario, insertUsuario } from "./bd.js";
 
 
 app.get("/usuarios", async (req, res) => {
@@ -53,10 +53,6 @@ app.get("/usuario/:id", async (req, res) => {
 });
 
 
-
-
-
-
 //index.js
 app.post("/usuario", async (req, res) => {
   console.log("Rota POST /usuario solicitada");
@@ -67,3 +63,4 @@ app.post("/usuario", async (req, res) => {
     res.status(error.status || 500).json({ message: error.message || "Erro!" });
   }
 });
+
