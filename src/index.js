@@ -7,13 +7,13 @@ dotenv.config();
 
 
 const app = express();//se de error tira isso 
-// Instancia o Express
 const port = 3000;  
 
 
 
-
 app.use(express.json());
+app.use(roteadorUsuario);
+
 // Define a porta
 app.get("/", (req, res) => {        // Cria a rota da raiz do projeto
   res.json({
@@ -28,4 +28,4 @@ app.listen(port, () => {            // Um socket para "escutar" as requisições
 
 //estava a linha 8
 
-app.use(roteadorUsuario);
+
