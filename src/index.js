@@ -27,6 +27,7 @@ app.listen(port, () => {            // Um socket para "escutar" as requisições
 });
 
 //estava a linha 8
+app.use(roteadorUsuario);
 app.use(roteadorLogin);
 
 
