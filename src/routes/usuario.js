@@ -1,6 +1,6 @@
 //src/routes/usuario.js
 import { Router } from "express";
-import { selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario } from "../bd/index.js"; 
+import { selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario } from "../db/index.js"; 
 
 
 const router = Router();
